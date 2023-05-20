@@ -4,7 +4,11 @@ import { AppService } from './app.service';
 import { CacheModule } from '@nestjs/cache-manager';
 
 @Module({
-  imports: [CacheModule.register()],
+  imports: [CacheModule.register({
+    isGlobal: true,
+    ttl: 100,
+    max: 10
+  })],
   controllers: [AppController],
   providers: [AppService],
 })
