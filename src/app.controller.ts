@@ -10,4 +10,6 @@ export class AppController {
   getHello(@Body() input: { name : string}) {
     return this.appService.getHello(input.name);
   }
+
+  
 }

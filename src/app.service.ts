@@ -10,4 +10,8 @@ export class AppService {
     await this.cacheManager.set('name', name);
     return await this.cacheManager.get('name');
   }
+
+  async delValue(key: string): Promise<void>{
+    await this.cacheManager.del(key);
+  }
 }
