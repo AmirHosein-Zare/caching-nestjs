@@ -14,4 +14,8 @@ export class AppService {
   async delValue(key: string): Promise<void>{
     await this.cacheManager.del(key);
   }
+
+  async resetCache(): Promise<void>{
+    await this.cacheManager.reset();
+  }
 }
