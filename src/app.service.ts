@@ -6,8 +6,8 @@ import { Cache } from 'cache-manager';
 export class AppService {
   constructor(@Inject(CACHE_MANAGER) private cacheManager: Cache){}
 
-  async getHello(): Promise<any> {
-    await this.cacheManager.set('key', 'value');
-    return await this.cacheManager.get('key');
+  async getHello(name: string): Promise<any> {
+    await this.cacheManager.set('name', name);
+    return await this.cacheManager.get('name');
   }
 }
