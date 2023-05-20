@@ -13,6 +13,13 @@ export class AppController {
 
   @Delete(':key')
   deleteKey(@Param('key') key): void{
+    if(key === "reset"){
+      this.appService.resetCache();
+    }
+    else{
       this.appService.delValue(key);
+    }
   }
+
+
 }
